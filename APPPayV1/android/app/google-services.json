@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1082419526002",
+    "project_id": "aicoju-payment",
+    "storage_bucket": "aicoju-payment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082419526002:android:274dd1267a9845e953c5eb",
+        "android_client_info": {
+          "package_name": "com.example.apppayv1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvKRZ99phhFz17IjlBYZqNge6r9K9us7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
