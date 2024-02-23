@@ -11,6 +11,7 @@ import 'package:apppayv1/profile.dart';
 import 'package:apppayv1/storage/app_preferences.dart';
 import 'package:apppayv1/tariff_list.dart';
 import 'package:apppayv1/user_request.dart';
+import 'package:apppayv1/widgets_utils/utils.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -116,9 +117,9 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(left: 13, right: 13, top: 13, bottom: 13),
                         child: Column(
                           children: [
-                            __item("Số tiền cần đóng", "${total!['unpaid']}đ", "images/FinanceIcons1.png"),
+                            __item("Số tiền cần đóng", "${Utils.format_VND(total!['unpaid'].toString())}đ", "images/FinanceIcons1.png"),
                             Expanded(child: Container()),
-                            __item("Số tiền đã đóng", "${total!['paid']}đ", "images/FinanceIcons.png"),
+                            __item("Số tiền đã đóng", "${Utils.format_VND(total!['paid'].toString())}đ", "images/FinanceIcons.png"),
                             Expanded(child: Container()),
                             __item("Số biểu phí phải đóng", "${total!['amount_receipt']}", "images/Group18279.png")
                           ],
@@ -273,7 +274,6 @@ class _HomePageState extends State<HomePage> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
-                      // spreadRadius: 5,
                       blurRadius: 7,
                     ),
                   ]
@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                           child: const Center(child: Text("\$", style: TextStyle(color: Colors.white, fontSize: 16),)),
                         ),
                         const SizedBox(width: 8,),
-                        Text("${userReceipt.receipt.total_price} VND" , style: const TextStyle(fontSize: 16, color: Colors.black54),),
+                        Text("${Utils.format_VND(userReceipt.receipt.total_price.toString())} VND" , style: const TextStyle(fontSize: 16, color: Colors.black54),),
                       ],
                     ),
                     Expanded(child: Container()),
